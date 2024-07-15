@@ -10,26 +10,28 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
-    "gatsby-plugin-postcss", 
-    { 
-      resolve: "gatsby-plugin-google-gtag", 
+    "gatsby-plugin-postcss",
+    {
+      resolve: "gatsby-plugin-google-gtag",
       options: {
         trackingIds: ["G-0YS25QGVGV"]
-      } 
-    }, 
-    "gatsby-plugin-image", 
-    "gatsby-plugin-sitemap", {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        "icon": "src/images/icon.png"
       }
-    }, 
-    "gatsby-plugin-sharp", 
-    "gatsby-transformer-sharp", {
-      resolve: 'gatsby-source-filesystem',
+    },
+    "gatsby-plugin-image",
+    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-manifest",
       options: {
-        "name": "images",
-        "path": "./src/images/"
+        icon: "src/images/icon.png"
+      }
+    },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/"
       },
       __key: "images"
     }
