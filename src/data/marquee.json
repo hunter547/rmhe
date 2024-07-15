@@ -1,0 +1,21 @@
+[
+  {
+    "text": "CONTACT US FOR A FREE QUOTE!"
+  },
+  {
+    "text": "Check us out on Facebook!",
+    "icon": { "name": "facebook-square", "color": "#3b5998" },
+    "link": {
+      "url": "https://www.facebook.com/Rockymountainhe",
+      "replacement_word": "Facebook"
+    }
+  },
+  {
+    "text": "Follow our work on Instagram!",
+    "icon": { "name": "instagram-square", "color": "#c13584" },
+    "link": {
+      "url": "https://www.instagram.com/rockymountainhe/",
+      "replacement_word": "Instagram"
+    }
+  }
+]
