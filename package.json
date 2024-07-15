@@ -20,7 +20,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint:write && yarn format:write && git add -A ."
+      "pre-commit": "yarn lint:write && yarn format:write && yarn build && git add -A ."
     }
   },
   "dependencies": {
