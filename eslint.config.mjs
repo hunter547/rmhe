@@ -13,13 +13,13 @@ export default [
       "public",
       "tailwind.config.js",
       "postcss.config.js",
-      "src/gatsby-types.d.ts"
-    ]
+      "src/gatsby-types.d.ts",
+    ],
   },
   { languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } } },
   { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   ...fixupConfigRules(pluginReactConfig),
-  eslintPluginPrettierRecommended
+  eslintPluginPrettierRecommended,
 ];
