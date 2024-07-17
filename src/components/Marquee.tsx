@@ -1,8 +1,8 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { graphql, Link, useStaticQuery } from "gatsby";
-import "./styles.css";
 import { IconName } from "@fortawesome/fontawesome-svg-core";
+import * as MarqueeStyles from "../styles/components/marquee.module.css";
 
 type MarqueeNodes = {
   node: {
@@ -39,26 +39,25 @@ function Marquee() {
   `);
   const nodes = edges.map((edge) => edge.node);
   return (
-    <div className="logos">
-      {Array(2)
-        .fill(undefined)
-        .map((_, i) => (
-          <div key={i} className="logos-slide">
-            <div className="flex items-center">
-              {nodes.map(({ text, icon, link }) => (
-                <div key={text} className="flex items-center mr-10">
-                  {icon && (
-                    <FontAwesomeIcon
-                      icon={["fab", icon.name]}
-                      color={icon.color}
-                    />
-                  )}
-                  <MarqueeTextLinkFormatter text={text} link={link} />
-                </div>
-              ))}
+    <div className={MarqueeStyles.wrapper}>
+      {nodes.map(({ text, icon, link }, i) => {
+        return (
+          <React.Fragment key={text}>
+            <div
+              className={`${MarqueeStyles.item} flex items-center justify-center`}
+              style={{
+                left: `max(calc(300px * ${nodes.length}), 100%)`,
+                animationDelay: `calc(35s / ${nodes.length} * (${nodes.length - (i + 1)} * -1)`,
+              }}
+            >
+              {icon && (
+                <FontAwesomeIcon icon={["fab", icon.name]} color={icon.color} />
+              )}
+              <MarqueeTextLinkFormatter text={text} link={link} />
             </div>
-          </div>
-        ))}
+          </React.Fragment>
+        );
+      })}
     </div>
   );
 }

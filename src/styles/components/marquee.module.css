@@ -1,0 +1,42 @@
+.wrapper {
+  width: 100%;
+  margin-inline: auto;
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 1) 90%,
+    rgba(0, 0, 0, 0)
+  );
+  background-color: #f2f2f2;
+  padding: 10px 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes scrollLeft {
+  to {
+    left: -300px;
+  }
+}
+
+.item {
+  width: 300px;
+  height: inherit;
+  border-radius: 6px;
+  position: absolute;
+  animation: scrollLeft 35s infinite linear;
+  padding: inherit;
+}
+
+.item svg {
+  height: 30px;
+  margin: 0 15px;
+}
+
+.wrapper:hover .item {
+  animation-play-state: paused;
+}
