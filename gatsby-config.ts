@@ -48,7 +48,6 @@ const config: GatsbyConfig = {
         fastHash: true,
       },
     },
-    `gatsby-plugin-fontawesome-css`,
   ],
 };
 

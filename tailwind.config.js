@@ -17,6 +17,10 @@ module.exports = {
       },
     },
     extend: {
+      backgroundColor: {
+        primary: "#c41b34",
+        secondary: "#f0df07",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

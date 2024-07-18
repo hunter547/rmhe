@@ -1,13 +1,12 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { graphql, Link, useStaticQuery } from "gatsby";
-import { IconName } from "@fortawesome/fontawesome-svg-core";
 import * as MarqueeStyles from "../styles/components/marquee.module.css";
+import Icon from "./icons";
 
 type MarqueeNodes = {
   node: {
     text: string;
-    icon?: { name: IconName; color: string };
+    icon?: string;
     link?: {
       url: string;
       replacement_word: string;
@@ -24,10 +23,7 @@ function Marquee() {
         edges {
           node {
             text
-            icon {
-              name
-              color
-            }
+            icon
             link {
               url
               replacement_word
@@ -50,9 +46,7 @@ function Marquee() {
                 animationDelay: `calc(35s / ${nodes.length} * (${nodes.length - (i + 1)} * -1)`,
               }}
             >
-              {icon && (
-                <FontAwesomeIcon icon={["fab", icon.name]} color={icon.color} />
-              )}
+              {icon && <Icon icon={icon} width={30} />}
               <MarqueeTextLinkFormatter text={text} link={link} />
             </div>
           </React.Fragment>
