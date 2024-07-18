@@ -17,5 +17,14 @@
       "url": "https://www.instagram.com/rockymountainhe/",
       "replacement_word": "Instagram"
     }
+  },
+  {
+    "text": "A+ rating with the Better Business Bureau",
+    "bold_text": "A+",
+    "icon": "BbbAPlus",
+    "link": {
+      "url": "https://www.bbb.org/us/co/colorado-springs/profile/remodel-contractors/rocky-mountain-home-enhancement-llc-0785-1000028404",
+      "replacement_word": "Better Business Bureau"
+    }
   }
 ]
