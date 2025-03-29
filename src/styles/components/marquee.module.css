@@ -10,11 +10,12 @@
     rgba(0, 0, 0, 1) 90%,
     rgba(0, 0, 0, 0)
   );
-  background-color: #f2f2f2;
+  background-color: hsl(var(--background));
   padding: 10px 0;
   height: 50px;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid hsl(var(--border));
 }
 
 @keyframes scrollLeft {
@@ -34,6 +35,10 @@
 
 .item svg {
   margin: 0 15px;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  color: hsl(var(--primary));
 }
 
 .wrapper:hover .item {

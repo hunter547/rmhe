@@ -45,7 +45,7 @@ function Marquee() {
               className={`${MarqueeStyles.item} flex items-center justify-center`}
               style={{
                 left: `max(calc(400px * ${nodes.length}), 100%)`,
-                animationDelay: `calc(35s / ${nodes.length} * (${nodes.length - (i + 1)} * -1)`,
+                animationDelay: `calc(35s / ${nodes.length} * (${nodes.length - (i + 1)} * -1))`,
               }}
             >
               {icon && <Icon icon={icon} width={30} />}
@@ -72,7 +72,11 @@ function MarqueeTextLinkFormatter({
     const { elsToInsert, replacementIndex: linkIndex } = orderElements(
       [elements.pop()],
       <span>
-        <Link to={link.url} target="_blank">
+        <Link
+          to={link.url}
+          target="_blank"
+          className="text-secondary hover:text-secondary/80"
+        >
           {link.replacement_word}
         </Link>
       </span>,
@@ -85,14 +89,14 @@ function MarqueeTextLinkFormatter({
   if (bold_text) {
     const { elsToInsert, replacementIndex: boldTextIndex } = orderElements(
       elements,
-      <span className="font-bold">{bold_text}</span>,
+      <span className="font-bold text-secondary">{bold_text}</span>,
       bold_text,
     );
     if (elsToInsert) {
       elements.splice(boldTextIndex, 1, ...elsToInsert);
     }
   }
-  return <p>{elements}</p>;
+  return <p className="text-foreground">{elements}</p>;
 }
 
 function orderElements(
